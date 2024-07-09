@@ -1,0 +1,18 @@
+<.header>
+  Expense Details
+  <:subtitle>View details for this expense</:subtitle>
+  <:actions>
+    <.link href={~p"/expenses/#{@expense}/edit"}>
+      <.button>Edit expense</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Date"><%= @expense.date %></:item>
+  <:item title="Amount"><%= @expense.amount %></:item>
+  <:item title="Category"><%= @expense.category %></:item>
+  <:item title="Description"><%= @expense.description %></:item>
+</.list>
+
+<.back navigate={~p"/expenses"}>Back to expenses</.back>

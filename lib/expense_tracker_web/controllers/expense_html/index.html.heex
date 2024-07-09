@@ -1,0 +1,16 @@
+<div class="flex justify-between items-center mb-6">
+  <h1 class="text-2xl font-bold">Expense Tracker</h1>
+  <.link href={~p"/expenses/new"}>
+    <.button>New Expense</.button>
+  </.link>
+</div>
+
+<.table id="expenses" rows={@expenses}>
+  <:col :let={expense} label="Date"><%= expense.date %></:col>
+  <:col :let={expense} label="Amount"><%= expense.amount %></:col>
+  <:col :let={expense} label="Category"><%= expense.category %></:col>
+  <:col :let={expense} label="Description"><%= expense.description %></:col>
+  <:action :let={expense}>
+    <.link navigate={~p"/expenses/#{expense}"}>View</.link>
+  </:action>
+</.table>

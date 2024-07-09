@@ -1,0 +1,8 @@
+<.header>
+  New Expense
+  <:subtitle>Add a new expense to your tracker.</:subtitle>
+</.header>
+
+<.expense_form changeset={@changeset} action={~p"/expenses"} />
+
+<.back navigate={~p"/expenses"}>Back to expenses</.back>

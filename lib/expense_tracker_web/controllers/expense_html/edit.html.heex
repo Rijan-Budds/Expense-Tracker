@@ -1,0 +1,8 @@
+<.header>
+  Edit Expense
+  <:subtitle>Edit the details of your expense.</:subtitle>
+</.header>
+
+<.expense_form changeset={@changeset} action={~p"/expenses/#{@expense.id}"} />
+
+<.back navigate={~p"/expenses"}>Back to expenses</.back>
