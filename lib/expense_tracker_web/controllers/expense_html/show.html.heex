@@ -5,6 +5,9 @@
     <.link href={~p"/expenses/#{@expense}/edit"}>
       <.button>Edit expense</.button>
     </.link>
+    <.link href={~p"/expenses/#{@expense}"} method="delete" data-confirm="Are you sure?">
+      <.button>Delete expense</.button>
+    </.link>
   </:actions>
 </.header>
 

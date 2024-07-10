@@ -4,6 +4,15 @@ defmodule ExpenseTrackerWeb.ExpenseController do
   alias ExpenseTracker.Finances
   alias ExpenseTracker.Finances.Expense
 
+  def delete(conn, %{"id" => id}) do
+    expense = Finances.get_expense!(id)
+
+    {:ok, _expense} = Finances.delete_expense(expense)
+
+    conn
+    |> put_flash(:info, "Expense deleted successfully.")
+    |> redirect(to: ~p"/expenses")
+  end
 
   def show(conn, %{"id" => id}) do
     expense = Finances.get_expense!(id)
